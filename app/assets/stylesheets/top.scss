@@ -155,14 +155,33 @@ header{
 	    		padding: 18px 70px;
 	    		box-sizing: border-box;
 	    		.logo{
+	    			text-align: center;
+	    			margin-top: 18px;
+	    			margin-bottom: 34px;
 	    			img{
-
+	    				width: 227px;
+	    				height: 80px;
 	    			}
 	    		}
 	    		p{
 	    			font-size: 18px;
 	    			line-height: 40px;
 	    			color: $white;
+	    			text-align: left;
+	    		}
+	    		.service_link{
+	    			width: 100%;
+	    			text-align: center;
+	    			margin-top: 70px;
+		    		a{
+	    				text-decoration: none;
+	    				color: $pink;
+	    				font-size: 24px;
+	    				font-weight: bold;
+	    				border: 1px solid $pink;
+	    				border-radius: 5px;
+	    				padding: 20px 30px;
+	    			}
 	    		}
 	    	}
 	    }
@@ -212,5 +231,39 @@ header{
 		    	}
 		    }
 		}
+	}
+}
+.company{
+	width: 100%;
+	background-color: $white;
+	p{
+		span{
+
+		}
+	}
+}
+footer{
+	width: 100%;
+	margin-top: 33px;
+	.content{
+		text-align: center;
+		a{
+			font-size: 16px;
+			font-weight: normal;
+			text-decoration: none;
+			color: $second_pink;
+			margin-right: 16px;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+	.copy_rights{
+		text-align: center;
+		font-size: 12px;
+		font-weight: none;
+		color: $second_pink;
+		margin-top: 23px;
+		margin-bottom: 27px;
 	}
 }
