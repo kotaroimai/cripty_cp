@@ -1,6 +1,6 @@
 <header>
 	<div class="left_content">
-		<img src="https://www.tokyu-be.jp/seminar/img/kouza_btn.gif" alt="Cripty">
+		<img src="../assets/logo.png" alt="Cripty">
 	</div>
 	<div class="right_content">
 		<ul>
@@ -16,6 +16,7 @@
 			<li>
 				<span class="to_company">Company</span>
 			</li>
+			<a href="https://twitter.com/Cripty_jp" target="_blank"><span class="fa fa-twitter"></span></a>
 		</ul>
 		<img src="../assets/hamburger.png" alt="メニュー" class="hamburger_menu">
 	</div>
@@ -35,6 +36,7 @@
 			<li>
 				<span class="over_lay_menu to_company">Company</span>
 			</li>
+			<a href="https://twitter.com/Cripty_jp" class="sp_twitter" target="_blank"><span class="fa fa-twitter"></span></a>
 		</ul>
 	</div>
 </header>
@@ -44,14 +46,14 @@
 		<h2>仮想通貨をもっと身近なものに。<br>"ブロックチェーン世代"に未来の通貨の入り口を提供する。</h2>
 	</div>
 </div>
-<div id="vision" class=" vision">
-	<h2 class="cp_title display">Vision</h2>
-	<h3 class="cp_sub_title display">理念・ビジョン</h3>
+<div id="vision" class="vision">
+	<h2 class="cp_title">Vision</h2>
+	<h3 class="cp_sub_title">理念・ビジョン</h3>
 	<h4 class="display">“ 仮想通貨の魅力を伝える ”</h4>
 	<p class="display">仮想通貨を支える技術であるブロックチェーンはインターネットに次ぐ革命とも言われています。変化の激しい情報化社会でこれからの若い世代が生きるヒント(key)となってほしい。仮想通貨を知ってもらうことでその先にあるお金や社会の仕組み、ブロックチェーンに目を向けてもらいたい、その最初の一歩を私たちは提供しようと考えています。</p>
 </div>
-<h2 id="media" class="cp_title media_title display">Media</h2>
-<h3 class="cp_sub_title display">運営メディア</h3>
+<h2 id="media" class="cp_title media_title">Media</h2>
+<h3 class="cp_sub_title">運営メディア</h3>
 <div class="sp_media">
 	<div class="sp_media_image">
 		<div class="filter">
@@ -59,17 +61,17 @@
 	</div>
 	<div class="media">
 		<div class="filter">
-			<div class="pc_mock display_slow">
+			<div class="pc_mock slide">
 				<img src="assets/pc_mock.png" alt="">
 			</div>
 			<div class="media_content">
 				<div class="filter">
 					<div class="logo">
-						<img src="https://www.tokyu-be.jp/seminar/img/kouza_btn.gif" alt="Cripty">
+						<img src="../assets/media_logo.png" alt="Cripty">
 					</div>
 					<p>Cripty(クリプティ)は、未来のお金のカタチ「仮想通貨」の魅力と可能性を、未来を担うブロックチェーン世代が届けるウェブメディア。<br>仮想通貨のはじめかたから取引のしかたまで初心者向けに分かりやすくお届け。海外留学生の現地レポートや女子大生の投資日記などエンタメ情報も配信。</p>
 					<div class="service_link">
-						<a href="https://cripty.jp/">CRIPTYを見る<span>▶</span></a>
+						<a href="https://cripty.jp/" target="_blank">CRIPTYを見る<span>▶</span></a>
 					</div>
 				</div>
 			</div>
@@ -78,8 +80,8 @@
 	</div>
 </div>
 <div id="member" class="member">
-	<h2 class="cp_title display">Member</h2>
-	<h3 class="cp_sub_title display">メンバー</h3>
+	<h2 class="cp_title">Member</h2>
+	<h3 class="cp_sub_title">メンバー</h3>
 	<ul class="slider display">
 		<% @member.each do |member| %>
 		<% if member[:delete_flg] == 0 %>
@@ -88,6 +90,12 @@
 				<div class="img"></div>
 				<div class="content">
 					<p class="member_name"><%= member[:name] %></p>
+					<% if member[:twitter] == 0 %>
+					<a href="https://twitter.com/<%= member[:twitter_url] %>" target="_blank"><img src="../assets/twitter-blue.png" alt="" class="slider_sns slider_twitter"></a>
+					<% end %>
+					<% if member[:facebook] == 0 %>
+					<a href="https://www.facebook.com/<%= member[:facebook_url] %>" target="_blank"><img src="../assets/facebook-blue.png" alt="" class="slider_sns slider_facebook"></a>
+					<% end %>
 					<p class="member_position"><%= member[:position] %></p>
 					<p class="member_description"><%= member[:description] %></p>
 				</div>
@@ -97,13 +105,13 @@
 		<% end %>
 	</ul>
 </div>
-<h2 id="company" class="company_position cp_title media_title display">Company</h2>
-<h3 class="company_position cp_sub_title display">会社概要</h3>
+<h2 id="company" class="company_position cp_title media_title">Company</h2>
+<h3 class="company_position cp_sub_title">会社概要</h3>
 <div class="company">
 	<div class="company_content display">
 		<p>会社名　<span>Cripty(クリプティ)</span></p>
 		<p>設立　　<span>2018年1月19日</span></p>
-		<p>代表　　<span>小野稜馬</span></p>
+		<p>代表　　<span>田中太郎</span></p>
 		<p>アドレス<span>cripty.co.jp</span></p>
 	</div>
 	<p class="note">※ お問い合わせは、名前を忘れず、アドレス宛まで送信してください</p>
@@ -129,6 +137,12 @@ $(function(){
 		else{
 			$('header').removeClass('to_transparent');
 		}
+	});
+
+	$('.over_lay_menu').click(function(){
+		$('body').removeClass('fixed').css({'top': 0});
+		$('.over_lay_filter').css('display','none')
+		$('.over_lay').slideUp();
 	});
 
 	$('.left_content').click(function(){
@@ -159,11 +173,6 @@ $(function(){
 		$('.over_lay_filter').css('display','none')
 		$('.over_lay').slideUp();
 	});
-	$('.over_lay_menu').click(function(){
-		$('body').removeClass('fixed').css({'top': 0});
-		$('.over_lay_filter').css('display','none')
-		$('.over_lay').slideUp();
-	});
 
 	$('.cp_top_block').textillate({in: {effect: 'bounceInDown'}});
 
@@ -175,10 +184,10 @@ $(function(){
 	});
 
 	$('.display').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-		$(this).stop().animate({opacity:1}, 800);
+		$(this).stop().animate({opacity:1}, 1000);
 	});
-	$('.display_slow').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-		$(this).stop().animate({opacity:1}, 3000);
+	$('.slide').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+		$(this).stop().animate({left:0, opacity:1}, 1500);
 	});
 
 	$('.slider').slick({
@@ -186,6 +195,7 @@ $(function(){
 		draggable: true,
 		infinite: true,
 		arrows: true,
+		dots: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		swipe: true,
