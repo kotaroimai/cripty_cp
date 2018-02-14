@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import "variables";
 // Default Variables
 
 // Slick icon entity codes outputs the following
@@ -10,8 +10,8 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
+$slick-arrow-color: $pink !default;
+$slick-dot-color: #dd6e8b !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
@@ -64,8 +64,8 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
@@ -78,6 +78,7 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     border: none;
     outline: none;
+    z-index: 2;
     &:hover, &:focus {
         outline: none;
         background: transparent;
@@ -91,7 +92,7 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         font-family: $slick-font-family;
-        font-size: 20px;
+        font-size: 40px;
         line-height: 1;
         color: $slick-arrow-color;
         opacity: $slick-opacity-default;
@@ -101,7 +102,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: -25px;
+    left: 3%;
     [dir="rtl"] & {
         left: auto;
         right: -25px;
@@ -115,7 +116,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -25px;
+    right: 3%;
     [dir="rtl"] & {
         left: -25px;
         right: auto;
